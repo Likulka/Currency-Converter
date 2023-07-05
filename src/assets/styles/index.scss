@@ -1,0 +1,110 @@
+@import './variables';
+
+* {
+	margin: 0;
+	padding: 0;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	&:before,
+	&:after {
+		-webkit-box-sizing: border-box;
+		-moz-box-sizing: border-box;
+		box-sizing: border-box;
+	}
+	&:focus {
+		outline: none;
+	}
+}
+
+*::-webkit-input-placeholder {
+	color: #c0c0c0;
+	opacity: 1;
+}
+*:-moz-placeholder {
+	color: #c0c0c0;
+	opacity: 1;
+}
+
+*::-moz-placeholder {
+	color: #c0c0c0;
+	opacity: 1;
+}
+
+*:-ms-input-placeholder {
+	color: #c0c0c0;
+	opacity: 1;
+}
+
+html,
+body {
+	height: 100%;
+}
+
+body {
+	background-color: $dark-grey;
+	padding: 0;
+	margin: 0;
+	color: #ffffff;
+	font-size: 18px;
+	font-weight: 400;
+	min-width: 320px;
+	position: relative;
+	line-height: 1.65;
+	font-family: $default-font;
+	overflow-x: hidden;
+}
+
+.wrapper {
+	display: flex;
+	flex-direction: column;
+	row-gap: 12px;
+	height: 100%;
+	max-width: $mobile;
+	width: 100%;
+
+	padding: 25px;
+	margin: 0 auto;
+}
+
+h1,
+h2,
+h4,
+h5,
+h6 {
+	font-size: 18px;
+	font-weight: 500;
+}
+
+h3 {
+	font-size: 22px;
+	font-weight: 500;
+}
+
+header {
+	display: flex;
+	position: relative;
+	justify-content: stretch;
+
+	> div {
+		position: absolute;
+		height: 30px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		border-radius: 7px;
+		box-shadow: $bx-accent;
+		cursor: pointer;
+		background-color: $grey;
+		width: 30px;
+	}
+
+	> h1 {
+		text-align: center;
+		flex: 1 1 auto;
+	}
+}
+
+#root {
+	height: 100%;
+}

@@ -1,0 +1,25 @@
+@import './src/assets/styles/variables.scss';
+
+.wrapper {
+	border-radius: 50%;
+	position: absolute;
+	width: 40px;
+	height: 40px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	top: calc(50% - 20px);
+	left: calc(50% - 20px);
+	background-color: $accent;
+	cursor: pointer;
+
+	&:hover {
+		box-shadow: 0px 0px 10px $yellow;
+		transition: box-shadow 0.2s ease-in-out;
+
+		svg {
+			color: $yellow;
+			transition: color 0.2s ease-in-out;
+		}
+	}
+}

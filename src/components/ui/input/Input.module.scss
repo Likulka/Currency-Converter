@@ -1,0 +1,31 @@
+@import './src/assets/styles/variables.scss';
+
+.input {
+	background: transparent;
+	border: none;
+	font-size: 30px;
+	position: relative;
+	line-height: 150%;
+	background: radial-gradient(
+		rgba(0, 0, 0, 0) 0%,
+		rgba(0, 0, 0, 1) 0%,
+		rgba(0, 0, 0, 0) 77%
+	);
+
+	background-position: 0 96%;
+	background-size: 0 0;
+	background-repeat: no-repeat;
+
+	&:focus {
+		text-decoration: underline;
+		text-decoration-thickness: 2px;
+		text-underline-offset: 8px;
+	}
+
+	&::placeholder {
+		color: Grey;
+		font-family: 'Gilroy';
+		font-weight: 300;
+		font-size: 18px;
+	}
+}
