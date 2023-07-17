@@ -58,7 +58,7 @@ body {
 .wrapper {
 	display: flex;
 	flex-direction: column;
-	row-gap: 12px;
+	row-gap: 13px;
 	height: 100%;
 	max-width: $mobile;
 	width: 100%;
@@ -69,7 +69,6 @@ body {
 
 h1,
 h2,
-h4,
 h5,
 h6 {
 	font-size: 18px;
@@ -79,6 +78,11 @@ h6 {
 h3 {
 	font-size: 22px;
 	font-weight: 500;
+}
+
+h4 {
+	font-weight: 400;
+	font-size: 16px;
 }
 
 header {
@@ -103,6 +107,12 @@ header {
 		text-align: center;
 		flex: 1 1 auto;
 	}
+}
+
+.main {
+	display: flex;
+	flex-direction: column;
+	row-gap: 15px;
 }
 
 #root {

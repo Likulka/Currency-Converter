@@ -4,22 +4,19 @@
 	color: $black;
 	padding: 30px;
 	border-radius: 23px;
-	margin: 12px 0;
 
 	> div {
 		display: flex;
 		align-items: center;
 		column-gap: 40px;
 
-		> input {
-			flex: 1 1 auto;
-		}
-
 		> div {
 			display: flex;
 			align-items: center;
 			column-gap: 3px;
 			cursor: pointer;
+
+
 		}
 	}
 

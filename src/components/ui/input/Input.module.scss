@@ -1,25 +1,40 @@
 @import './src/assets/styles/variables.scss';
 
+.container {
+	flex: 1 1 70%;
+}
+
+.wrapper {
+	flex: 1 1 70%;
+}
+
 .input {
 	background: transparent;
-	border: none;
 	font-size: 30px;
 	position: relative;
+	border: none;
 	line-height: 150%;
-	background: radial-gradient(
-		rgba(0, 0, 0, 0) 0%,
-		rgba(0, 0, 0, 1) 0%,
-		rgba(0, 0, 0, 0) 77%
-	);
+	max-width: 100%;
 
-	background-position: 0 96%;
-	background-size: 0 0;
-	background-repeat: no-repeat;
+	border-bottom: 2px solid transparent;
+	border-image: linear-gradient(
+		0.25turn,
+		rgba(255, 248, 34, 0) 0,
+		rgba(0, 0, 0, 1) 50%,
+		rgba(56, 2, 155, 0) 100%
+	);
+	border-image-slice: 1;
 
 	&:focus {
 		text-decoration: underline;
 		text-decoration-thickness: 2px;
-		text-underline-offset: 8px;
+		text-underline-offset: 10px;
+		/* border-bottom: transparent; */
+		border-image: linear-gradient(
+			0.25turn,
+			rgba(255, 248, 34, 0) 0,
+			rgba(0, 0, 0, 0) 100%
+		);
 	}
 
 	&::placeholder {

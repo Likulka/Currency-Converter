@@ -1,8 +1,9 @@
 import { BsChevronLeft } from 'react-icons/bs'
+import styles from './Header.module.scss'
 
-const Header = () => {
+const Header = ({ backLink }) => {
 	return (
-		<header>
+		<header className={styles.wrapper}>
 			<div>
 				<BsChevronLeft fontSize={15} />
 			</div>

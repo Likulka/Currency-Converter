@@ -2,12 +2,12 @@ import { BiChevronDown } from 'react-icons/bi'
 import Input from '../../../../ui/input/Input'
 import styles from './CurrencyCard.module.scss'
 
-const CurrencyCard = ({ currency, actionType }) => {
+const CurrencyCard = ({ currency, actionType, inputName }) => {
 	return (
 		<div className={`${styles.wrapper} ${currency}`}>
 			<h2>{actionType}</h2>
 			<div>
-				<Input name="btc" />
+				<Input name="btc" inputName={inputName} />
 				<div>
 					<h3>{currency}</h3>
 					<BiChevronDown fontSize={30} />

@@ -1,43 +1,53 @@
-import { useState } from 'react'
+import { useContext, useRef } from 'react'
+import { ConverterContext } from '../../../providers/ConverterProvider'
 import styles from './Input.module.scss'
-const Input = ({ name }) => {
-	const [inputValue, setInputValue] = useState('')
 
-	const handleInputChange = event => {
-		setInputValue(event.target.value)
+const Input = ({ name, inputName }) => {
+	const divRef = useRef(null)
+	const inputRef = useRef(null)
+
+	const { inputValue1, inputValue2, handleInputFocus } =
+		useContext(ConverterContext)
+
+	const inputValue = inputName === 'input1' ? inputValue1 : inputValue2
+
+	const inputStyle = {
+		width: `${inputValue.length * 17}px`
 	}
 
-	const getTextWidth = text => {
-		const canvas = document.createElement('canvas')
-		const context = canvas.getContext('2d')
-		context.font = window.getComputedStyle(document.getElementById(name)).font
-		const width = context.measureText(text).width
-		return width
-	}
-
-	const handleInputBlur = event => {
-		const textWidth = getTextWidth(inputValue)
-		console.log('Длина текста:', textWidth, 'пикселей')
-		event.target.style.backgroundSize = `${textWidth}px 2.5px`
-	}
-
-	const handleInputFocus = event => {
-		event.target.style.backgroundSize = '0 0'
-	}
+	// const handleChange = (event) =>{
+	// 	set
+	// }
 
 	return (
-		<input
-			className={styles.input}
-			value={inputValue}
-			onChange={handleInputChange}
-			onFocus={handleInputFocus}
-			onBlur={handleInputBlur}
-			name={name}
-			type="text"
-			id={name}
-			placeholder="Enter amount"
-			size={1}
-		/>
+		<div className={styles.container}>
+			<div
+				className={styles.wrapper}
+				onClick={() => inputRef.current.focus()}
+				ref={divRef}
+			>
+				<input
+					ref={inputRef}
+					className={styles.input}
+					onFocus={() => handleInputFocus(inputName)}
+					value={inputValue}
+					onChange={event => {
+						event.preventDefault()
+					}}
+					name={name}
+					type="text"
+					id={name}
+					placeholder="Enter amount"
+					style={
+						inputValue
+							? inputValue.length * 17 < divRef.current.offsetWidth
+								? inputStyle
+								: { width: '100%' }
+							: { width: '100%' }
+					}
+				/>
+			</div>
+		</div>
 	)
 }
 
