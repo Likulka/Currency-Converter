@@ -1,11 +1,9 @@
-import Layout from './components/layout/Layout'
-import Home from './components/screens/home/Home'
+import Router from './routes/Router'
 function App() {
+	// FetchCoins()
 	return (
 		<>
-			<Layout>
-				<Home />
-			</Layout>
+			<Router />
 		</>
 	)
 }

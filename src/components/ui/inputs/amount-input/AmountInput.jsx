@@ -1,8 +1,8 @@
 import { useContext, useRef } from 'react'
-import { ConverterContext } from '../../../providers/ConverterProvider'
-import styles from './Input.module.scss'
+import { ConverterContext } from '../../../../providers/ConverterProvider'
+import styles from './AmountInput.module.scss'
 
-const Input = ({ name, inputName }) => {
+const AmountInput = ({ name, inputName }) => {
 	const divRef = useRef(null)
 	const inputRef = useRef(null)
 
@@ -14,10 +14,6 @@ const Input = ({ name, inputName }) => {
 	const inputStyle = {
 		width: `${inputValue.length * 17}px`
 	}
-
-	// const handleChange = (event) =>{
-	// 	set
-	// }
 
 	return (
 		<div className={styles.container}>
@@ -51,4 +47,4 @@ const Input = ({ name, inputName }) => {
 	)
 }
 
-export default Input
+export default AmountInput

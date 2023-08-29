@@ -13,12 +13,21 @@ export const ConverterProvider = ({ children }) => {
 	const [inputValue2, setInputValue2] = useState('')
 	const [focusedInput, setFocusedInput] = useState('')
 
+	const [coins, setCoins] = useState([])
+
 	const handleInputChange = (inputName, value, symbol) => {
 		if (inputName === 'input1') {
 			SetInputValue(inputValue1, setInputValue1, symbol, value)
 		} else if (inputName === 'input2') {
 			SetInputValue(inputValue2, setInputValue2, symbol, value)
 		}
+	}
+
+	const handleRequestCoins = data => {
+		setCoins(prevValue => [
+			...prevValue,
+			{ symbol: data.symbol, URL: data.logoURI }
+		])
 	}
 
 	const handleInputFocus = inputName => {
@@ -31,7 +40,9 @@ export const ConverterProvider = ({ children }) => {
 			inputValue2,
 			focusedInput,
 			handleInputChange,
-			handleInputFocus
+			handleInputFocus,
+			coins,
+			handleRequestCoins
 		}),
 		[inputValue1, inputValue2, focusedInput]
 	)

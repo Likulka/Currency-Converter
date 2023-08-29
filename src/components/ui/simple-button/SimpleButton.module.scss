@@ -1,0 +1,20 @@
+@import './src/assets/styles/variables.scss';
+
+.simple-button {
+	width: 100%;
+	// margin: 0 10px;
+	border: none;
+	font-family: 'Gilroy';
+	border-radius: 10px;
+	padding: 9px 0;
+	font-size: 18px;
+	font-weight: 500;
+}
+
+.lilac {
+	background-color: darken($lilac, 4%);
+}
+
+.yellow {
+	background-color: darken($yellow, 3%);
+}

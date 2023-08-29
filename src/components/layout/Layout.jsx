@@ -1,10 +1,13 @@
+import { useCheckToken } from '../../hooks/useCheckToken'
 import Header from './header/Header'
 
-const Layout = ({ children }) => {
+const Layout = ({ children, backLink }) => {
+	useCheckToken()
+	console.log('layout')
 	return (
 		<section className="wrapper">
-			<Header />
-			{children}
+			<Header backLink={backLink} />
+			<main className="main">{children}</main>
 		</section>
 	)
 }

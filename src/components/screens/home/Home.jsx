@@ -1,14 +1,22 @@
+import Layout from '../../layout/Layout'
 import Converter from './converter/Converter'
 import InfoSection from './info-section/InfoSection'
 import Keyboard from './keyboard/Keyboard'
+
 // import styles from './Home.module.scss';
 const Home = () => {
+	// const navigate = useNavigate()
+	// const { isAuth, setIsAuth } = useAuth()
+
+	// useEffect(() => {
+	// 	if (isAuth) navigate('/auth')
+	// }, [isAuth])
 	return (
-		<main className="main">
+		<Layout backLink={'/auth'}>
 			<Converter />
 			<InfoSection />
 			<Keyboard />
-		</main>
+		</Layout>
 	)
 }
 
