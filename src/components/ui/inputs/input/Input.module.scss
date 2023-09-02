@@ -1,23 +1,23 @@
 @import './src/assets/styles/variables.scss';
 
 .input-wrapper {
-	display: flex;
-	flex-direction: column;
+	padding: 10px 0;
 
 	.error {
 		padding: 2px 10px 0 10px;
-		color: rgb(138, 9, 9);
-		// font-weight: 500;
+		color: $error;
 		font-size: 16px;
 	}
 }
 
 .input {
-	border-radius: 10px;
+	border-radius: 25px;
 	border: none;
+	background-color: $grey;
+	color: $text;
 	width: 100%;
 	font-size: 18px;
 	align-self: center;
-	padding: 10px 10px;
+	padding: 11px 15px;
 	font-family: 'Gilroy';
 }

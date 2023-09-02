@@ -2,7 +2,7 @@
 
 .form {
 	flex-grow: 1;
-	display: flex;
+	// display: flex;
 	flex-direction: column;
 	row-gap: 25px;
 	// background-color: $yellow;
@@ -10,6 +10,12 @@
 	border-radius: 25px;
 	margin-top: 45%;
 	// justify-content: center;
+	.error {
+		color: #fe4332;
+		padding: 0 15px 10px;
+		position: relative;
+		font-size: 16px;
+	}
 }
 
 .form-button-wrapper {

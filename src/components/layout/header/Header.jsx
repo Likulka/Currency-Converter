@@ -9,7 +9,7 @@ import { headers } from './headers.data'
 
 const Header = ({ backLink }) => {
 	const { pathname } = useLocation()
-	const { setIsAuth } = useAuth()
+	const { isAuth, setIsAuth } = useAuth()
 
 	const path = headers.find(heading => heading.path == pathname || '')
 
@@ -29,9 +29,11 @@ const Header = ({ backLink }) => {
 				</Link>
 			</div>
 			<h1>{path?.heading}</h1>
-			<button onClick={logoutHandler}>
-				<IoExitOutline />
-			</button>
+			{isAuth && (
+				<button onClick={logoutHandler}>
+					<IoExitOutline />
+				</button>
+			)}
 		</header>
 	)
 }

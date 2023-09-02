@@ -11,7 +11,6 @@ export const useCheckToken = () => {
 	useEffect(() => {
 		const token = Cookies.get(TOKEN)
 		if (!token) {
-			// setIsAuth(false)
 		}
 	}, [pathname, isAuth])
 }

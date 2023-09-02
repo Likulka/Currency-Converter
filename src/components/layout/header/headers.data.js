@@ -6,5 +6,9 @@ export const headers = [
 	{
 		heading: 'Convert',
 		path: '/'
+	},
+	{
+		heading: 'Sign up',
+		path: '/register'
 	}
 ]

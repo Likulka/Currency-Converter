@@ -13,8 +13,6 @@ const KeyboardButton = ({ symbol }) => {
 		if (focusedInput) {
 			handleInputChange(focusedInput, event.target.innerText, symbol)
 		}
-
-		console.log()
 	}
 
 	return (

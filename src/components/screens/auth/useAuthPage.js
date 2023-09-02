@@ -21,23 +21,18 @@ export const useAuthPage = () => {
 	const navigate = useNavigate()
 
 	useEffect(() => {
-		console.log(`auth changed: ${isAuth}`)
-	}, [isAuth])
-
-	useEffect(() => {
 		if (isAuth) {
 			navigate('/')
 		}
 	}, [isAuth])
 
-	const { mutate, isLoading } = useMutation(
+	const { mutate, isLoading, error } = useMutation(
 		['auth'],
 		({ email, password }) => AuthService.main(email, password, type),
 		{
 			onSuccess: () => {
 				setIsAuth(true)
 				reset()
-				console.log(isAuth)
 			}
 		}
 	)
@@ -46,13 +41,18 @@ export const useAuthPage = () => {
 		mutate(data)
 	}
 
+	useEffect(() => {
+		type === 'register' && navigate('/register')
+	}, [type])
+
 	return useMemo(
 		() => ({
 			register,
 			onSubmit,
 			handleSubmit,
 			setType,
-			// isLoading,
+			isLoading,
+			error,
 			errors
 		}),
 		[errors, isLoading]

@@ -3,7 +3,6 @@ import Header from './header/Header'
 
 const Layout = ({ children, backLink }) => {
 	useCheckToken()
-	console.log('layout')
 	return (
 		<section className="wrapper">
 			<Header backLink={backLink} />

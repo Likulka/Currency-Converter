@@ -5,8 +5,8 @@ import styles from './Auth.module.scss'
 import { useAuthPage } from './useAuthPage'
 
 const Auth = () => {
-	const { register, handleSubmit, onSubmit, errors, setType } = useAuthPage()
-	console.log('auth')
+	const { register, handleSubmit, onSubmit, errors, setType, error } =
+		useAuthPage()
 
 	return (
 		<>
@@ -25,11 +25,24 @@ const Auth = () => {
 						error={errors?.password?.message}
 						register={register}
 					/>
+
+					{error && (
+						<div className={styles.error}>{error.response.data.message}</div>
+					)}
 					<div className={styles['form-button-wrapper']}>
-						<SimpleButton clickHandler={() => setType('login')}>
+						<SimpleButton
+							clickHandler={() => () => {
+								setType('login')
+							}}
+						>
 							Sign in
 						</SimpleButton>
-						<SimpleButton clickHandler={() => setType('register')}>
+						<SimpleButton
+							type={'button'}
+							clickHandler={() => {
+								setType('register')
+							}}
+						>
 							Sign up
 						</SimpleButton>
 					</div>
